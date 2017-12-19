@@ -10,5 +10,6 @@
  - LinkedIn: https://www.linkedin.com/company/18381675/
  - OK.ru: https://ok.ru/group/58688646086714
  - instagram: https://www.instagram.com/piter_js/
+ - Medium: https://medium.com/piterjs
 
 hello@piterjs.org
