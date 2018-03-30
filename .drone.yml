@@ -6,12 +6,6 @@ pipeline:
     repo: piterjs/piterjs.org
     dockerfile: Dockerfile
     tags:
-      - ${APP_VERSION}-${DRONE_BUILD_NUMBER}
+      - $APP_VERSION-$DRONE_BUILD_NUMBER
       - latest
     secrets: [ docker_username, docker_password ]
-  telegram:
-    image: appleboy/drone-telegram
-    token: $$TELEGRAM_TOKEN
-    to: "@mike1pol"
-    when:
-      status: [ success, failure ]
