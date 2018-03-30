@@ -1,9 +1,13 @@
 pipeline:
   docker:
+    environment:
+      - APP_VERSION="v1.0.0"
     image: plugins/docker
     repo: piterjs/piterjs.org
     dockerfile: Dockerfile
-    tags: v$$DRONE_BUILD_NUMBER
+    tags:
+      - ${APP_VERSION}-${DRONE_BUILD_NUMBER}
+      - latest
     secrets: [ docker_username, docker_password ]
   telegram:
     image: appleboy/drone-telegram
