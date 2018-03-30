@@ -5,3 +5,6 @@ pipeline:
     dockerfile: Dockerfile
     tags: v1.0.0-${DRONE_COMMIT}
     secrets: [ docker_username, docker_password ]
+  deploy:
+     image: vallard/drone-kube
+     template: deployment.yaml
