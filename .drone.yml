@@ -8,3 +8,4 @@ pipeline:
   deploy:
      image: vallard/drone-kube
      template: deployment.yaml
+     server: https://185.185.70.117:6443
