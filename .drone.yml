@@ -5,3 +5,9 @@ pipeline:
     dockerfile: Dockerfile
     auto_tag: true
     secrets: [ docker_username, docker_password ]
+  telegram:
+    image: appleboy/drone-telegram
+    token: $$TELEGRAM_TOKEN
+    to: 66780195
+    when:
+      status: [ success, failure ]
