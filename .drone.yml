@@ -1,0 +1,7 @@
+pipeline:
+  docker:
+    image: plugins/docker
+    repo: piterjs/piterjs.org
+    dockerfile: Dockerfile
+    auto_tag: true
+    secrets: [ docker_username, docker_password ]
