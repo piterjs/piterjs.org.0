@@ -3,5 +3,5 @@ pipeline:
     image: plugins/docker
     repo: piterjs/piterjs.org
     dockerfile: Dockerfile
-    tags: v1.0.0-${DRONE_COMMIT:0:7}
+    tags: v1.0.0-${DRONE_COMMIT}
     secrets: [ docker_username, docker_password ]
