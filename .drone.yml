@@ -6,6 +6,6 @@ pipeline:
     repo: piterjs/piterjs.org
     dockerfile: Dockerfile
     tags:
-      - $$DRONE_COMMIT
+      - $${DRONE_BUILD_NUMBER##v1.0.0-}
       - latest
     secrets: [ docker_username, docker_password ]
