@@ -3,11 +3,11 @@ pipeline:
     image: plugins/docker
     repo: piterjs/piterjs.org
     dockerfile: Dockerfile
-    auto_tag: true
+    tags: v$$DRONE_BUILD_NUMBER
     secrets: [ docker_username, docker_password ]
   telegram:
     image: appleboy/drone-telegram
     token: $$TELEGRAM_TOKEN
-    to: 66780195
+    to: "@mike1pol"
     when:
       status: [ success, failure ]
