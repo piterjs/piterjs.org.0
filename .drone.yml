@@ -1,11 +1,7 @@
 pipeline:
   docker:
-    environment:
-      - APP_VERSION="v1.0.0"
     image: plugins/docker
     repo: piterjs/piterjs.org
     dockerfile: Dockerfile
-    tags:
-      - $${DRONE_BUILD_NUMBER##v1.0.0-}
-      - latest
+    tags: v1.0.0-${DRONE_COMMIT:0:7}
     secrets: [ docker_username, docker_password ]
