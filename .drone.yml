@@ -9,4 +9,4 @@ pipeline:
     image: vallard/drone-kube
     template: deployment.yaml
     namespace: piterjs-org
-    secrets: [ KUBE_TOKEN, KUBE_SERVER ]
+    secrets: [ KUBE_TOKEN, KUBE_SERVER, KUBE_CA ]
