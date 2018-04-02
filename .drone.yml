@@ -5,7 +5,6 @@ pipeline:
     dockerfile: Dockerfile
     tags: v1.0.0-${DRONE_COMMIT}
     secrets: [ docker_username, docker_password ]
-  deploy:
-     image: vallard/drone-kube
-     template: deployment.yaml
-     server: https://185.185.70.117:6443
+  kube:
+      image: vallard/drone-kube
+    template: deployment.yaml
