@@ -10,3 +10,24 @@ pipeline:
     template: deployment.yaml
     namespace: piterjs-org
     secrets: [ KUBE_TOKEN, KUBE_SERVER, KUBE_CA ]
+  notify:
+    image: appleboy/drone-telegram
+    format: markdown
+    message: >
+     {{#success build.status}}✅{{else}}❌{{/success}} Build {{build.status}}: *{{repo.owner}}/{{repo.name}}*
+
+     build: {{build.number}}
+
+     commit: {{commit.branch}}:{{commit.sha}}
+
+     By: {{commit.author}}
+
+     {{commit.message}}
+
+     {{build.link}}
+    secrets:
+      - source: telegram_token
+        target: telegram_token
+      - source: telegram_to
+        target: telegram_to
+
