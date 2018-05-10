@@ -30,4 +30,4 @@ pipeline:
         target: telegram_token
       - source: telegram_to
         target: telegram_to
-
+branches: master
